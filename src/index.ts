@@ -3,6 +3,7 @@
 import { Command } from "commander";
 
 import packageJson from "../package.json" with { type: "json" };
+import { actionCommand } from "./commands/action.js";
 import { apiCommand } from "./commands/api.js";
 import { componentCommand } from "./commands/component.js";
 import { pageCommand } from "./commands/page.js";
@@ -46,5 +47,16 @@ program
   .option("-s, --skip-test", "Skip generating test file")
   .option("-d, --dry-run", "Preview files without creating them")
   .action(apiCommand);
+
+program
+  .command("action [name]")
+  .alias("act")
+  .description(
+    "Generate an Astro action. Omitting the name triggers interactive mode.",
+  )
+  .option("-p, --path <path>", "Output directory (default: src/actions)")
+  .option("-s, --skip-test", "Skip generating test file")
+  .option("-d, --dry-run", "Preview files without creating them")
+  .action(actionCommand);
 
 program.parse();

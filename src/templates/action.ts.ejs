@@ -1,0 +1,46 @@
+import {
+  ActionError,
+  defineAction,
+  type ActionAPIContext,
+} from "astro:actions";
+import { z } from "astro:schema";
+
+const inputSchema = z.object({
+  // TODO: Define your input schema
+});
+
+export type <%= pascalName %>Request = z.infer<typeof inputSchema>;
+
+export const <%= camelName %> = defineAction({
+  input: inputSchema,
+  accept: "form",
+  handler: _<%= camelName %>Handler,
+});
+
+/**
+ * TODO: Write a description for this action
+ *
+ * @private Exported only for testing purposes
+ * @param input - The action arguments defined in the zod schema `inputSchema`
+ * @param ctx - The action API context containing request-specific information
+ * @returns Promise resolving to success status, message, and data
+ */
+export async function _<%= camelName %>Handler(
+  input: <%= pascalName %>Request,
+  ctx: ActionAPIContext,
+) {
+  try {
+    // TODO: Check authentication state
+  } catch (error) {
+    throw new ActionError({
+      message: "Failed to authenticate",
+      code: "INTERNAL_SERVER_ERROR",
+    });
+  }
+
+  return {
+    success: true,
+    message: "Action completed successfully",
+    data: {},
+  };
+}
