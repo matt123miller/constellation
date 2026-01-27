@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+
+const title = '<%= pascalName %>';
+---
+
+<Layout {title}>
+  <main>
+    <h1><%= pascalName %></h1>
+    <p>Welcome to the <%= name %> page.</p>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    max-width: 800px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+</style>
