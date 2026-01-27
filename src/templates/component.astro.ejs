@@ -1,0 +1,17 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={['<%= kebabName %>', className]}>
+  <slot />
+</div>
+
+<style>
+  .<%= kebabName %> {
+    /* Add styles here */
+  }
+</style>
