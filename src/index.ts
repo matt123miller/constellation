@@ -2,6 +2,7 @@
 
 import { Command } from "commander";
 import { apiCommand } from "./commands/api.js";
+import { componentCommand } from "./commands/component.js";
 
 const program = new Command();
 
