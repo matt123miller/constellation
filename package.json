@@ -7,7 +7,7 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "astro-gen": "./dist/index.js"
+    "constellation": "./dist/index.js"
   },
   "main": "index.js",
   "scripts": {
