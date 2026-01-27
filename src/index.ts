@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 import { Command } from "commander";
+
+import packageJson from "../package.json" with { type: "json" };
 import { apiCommand } from "./commands/api.js";
 import { componentCommand } from "./commands/component.js";
 import { pageCommand } from "./commands/page.js";
@@ -9,10 +11,8 @@ const program = new Command();
 
 program
   .name("constellation")
-  .description(
-    "CLI tool for generating Astro components, pages, and API routes",
-  )
-  .version("0.1.0");
+  .description(packageJson.description)
+  .version(packageJson.version);
 
 program
   .command("component [name]")
