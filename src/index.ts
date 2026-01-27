@@ -13,6 +13,28 @@ program
   .version("0.1.0");
 
 program
+  .command("component [name]")
+  .alias("c")
+  .description(
+    "Generate an Astro component. Omitting the name triggers interactive mode.",
+  )
+  .option("-p, --path <path>", "Output directory (default: src/components)")
+  .option("-s, --skip-test", "Skip generating test file")
+  .option("-d, --dry-run", "Preview files without creating them")
+  .action(componentCommand);
+
+program
+  .command("page [name]")
+  .alias("p")
+  .description(
+    "Generate an Astro page. Omitting the name triggers interactive mode.",
+  )
+  .option("-p, --path <path>", "Output directory (default: src/pages)")
+  .option("-s, --skip-test", "Skip generating test file")
+  .option("-d, --dry-run", "Preview files without creating them")
+  .action(pageCommand);
+
+program
   .command("api [name]")
   .alias("a")
   .description(
