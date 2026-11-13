@@ -50,7 +50,6 @@ program
 
 program
   .command("action [name]")
-  .alias("act")
   .description(
     "Generate an Astro action. Omitting the name triggers interactive mode.",
   )
