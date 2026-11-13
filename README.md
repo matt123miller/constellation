@@ -23,7 +23,7 @@ The `constellation` command will now be available globally on your machine.
 | `constellation component [name]` | `c` | Generate an Astro component | `src/components` |
 | `constellation page [name]` | `p` | Generate an Astro page | `src/pages` |
 | `constellation api [name]` | `a` | Generate an API route | `src/pages/api` |
-| `constellation action [name]` | `act` | Generate an Astro action | `src/actions` |
+| `constellation action [name]` | omitted | Generate an Astro action | `src/actions` |
 
 ### Options
 
@@ -61,7 +61,7 @@ constellation component
 # ? Output path: src/components
 # ? Include test file? Yes
 
-constellation act
+constellation action
 # ? Action name: addToCart
 # ? Output path: src/actions
 # ? Include test file? Yes
